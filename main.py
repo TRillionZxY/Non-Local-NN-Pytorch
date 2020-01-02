@@ -94,7 +94,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=args.lr,
                       momentum=0.9, weight_decay=5e-4)
 lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(
-    optimizer, milestones=[100, 150], last_epoch=start_epoch - 1)
+    optimizer, milestones=[150, 250], gamma=0.1, last_epoch=start_epoch - 1)
 
 # Training
 
